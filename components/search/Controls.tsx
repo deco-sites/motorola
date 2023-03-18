@@ -21,24 +21,20 @@ function Controls({ page }: { page: ProductListingPage }) {
   const open = useSignal(false);
   const filters = page?.filters;
   const breadcrumb = page?.breadcrumb;
-
   return (
-    <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4 sm:flex-row sm:h-[53px] md:border-b-1">
+    <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4">
       <div class="flex flex-row items-center sm:p-0 mb-2">
         <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
       </div>
-      <div class="flex flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
-        {
-          /* <Button
-          variant="tertiary"
-          onClick={() => {
-            open.value = true;
-          }}
-        >
-          Filtrar
-          <Icon id="FilterList" width={16} height={16} />
-        </Button> */
-        }
+      <div className="flex flex-col items-center">
+        <p className="text-mz-title-light mt-[86px] text-[20px] m-[0] leading-[1.5]">
+          Você buscou por:
+        </p>
+        <h1 className="text-[36px] font-bold text-mz-title-light my-[24px]">
+          buscado
+        </h1>
+      </div>
+      <div class="flex flex-row sm:gap-4 items-center justify-end">
         <Sort />
       </div>
 

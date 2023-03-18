@@ -126,6 +126,10 @@ const options: Omit<Options, "selfURL"> = {
       xl: "1280px",
       "2xl": "1536px",
     },
+    backgroundImage: {
+      "arrow":
+        "url('data:image/svg+xml,%3Csvg fill='none' width='10' height='10' viewBox='0 0 16 16' class=' vtex-search-result-3-x-caretIcon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cuse href='%23nav-caret--down' xlink:href='%23nav-caret--down'%3E%3C/use%3E%3C/svg%3E')",
+    },
   },
   preflight: (preflight) => ({
     ...preflight,
