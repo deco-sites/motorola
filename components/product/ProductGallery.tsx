@@ -5,6 +5,8 @@ import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
+import BackgroundImage from "../ui/BackgroundImage.tsx";
+import ProductCardSearch from "./ProductCardSearch.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -21,10 +23,10 @@ function NotFound() {
 function Gallery({ page }: { page: ProductListingPage }) {
   return (
     <Container class="px-4 sm:py-10">
-      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
+      <div class="relative grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-10 items-center">
         {page.products?.map((product, index) => (
           <div class="w-full list-none">
-            <ProductCard product={product} preload={index === 0} />
+            <ProductCardSearch product={product} preload={index === 0} />
           </div>
         ))}
       </div>
@@ -44,6 +46,7 @@ function Gallery({ page }: { page: ProductListingPage }) {
           </Button>
         </a>
       </div>
+      <BackgroundImage />
     </Container>
   );
 }

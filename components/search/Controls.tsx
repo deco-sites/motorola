@@ -28,7 +28,8 @@ function Controls({ page }: { page: ProductListingPage }) {
         <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
       </div>
       <div class="flex flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
-        <Button
+        {
+          /* <Button
           variant="tertiary"
           onClick={() => {
             open.value = true;
@@ -36,7 +37,8 @@ function Controls({ page }: { page: ProductListingPage }) {
         >
           Filtrar
           <Icon id="FilterList" width={16} height={16} />
-        </Button>
+        </Button> */
+        }
         <Sort />
       </div>
 

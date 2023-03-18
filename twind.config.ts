@@ -34,6 +34,11 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
+        "mz-title-red": "#ff554d",
+        "mz-text-discount": "#c4beb6",
+        "mz-text-blue": "#92c1e9",
+        "mz-title-light": "#ddc8b7",
+        "mz-blue-bg": "#001428",
         "default": "#FFFFFF",
         "header": "#FFFFFF",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
@@ -111,7 +116,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
+      sans: ["Montserrat", "sans-serif"],
       serif: ["inherit", "serif"],
     },
     screens: {
@@ -134,12 +139,13 @@ const options: Omit<Options, "selfURL"> = {
     'section[data-manifest-key="./sections/Footer.tsx"]': {
       marginTop: "auto",
     },
-
     // Prevent scroll when modal is open
     "body[no-scroll]": {
       overflow: "hidden",
       height: "100vh",
     },
+    "@import":
+      `url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap')`,
   }),
   plugins: {
     backdrop: {
