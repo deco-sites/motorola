@@ -250,24 +250,9 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "title": "Href",
                     },
-                    "title": {
-                      "type": "string",
-                      "title": "Title",
-                    },
-                    "subTitle": {
-                      "type": "string",
-                      "title": "Sub Title",
-                    },
-                    "label": {
-                      "type": "string",
-                      "title": "Label",
-                    },
                   },
                   "required": [
                     "href",
-                    "title",
-                    "subTitle",
-                    "label",
                   ],
                 },
               },
@@ -450,6 +435,10 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "WhatsApp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ArrowWhite",
                     },
                   ],
                   "title": "Icon",
@@ -653,6 +642,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "WhatsApp",
+                              },
+                              {
+                                "type": "string",
+                                "const": "ArrowWhite",
                               },
                             ],
                             "title": "Icon",

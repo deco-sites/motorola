@@ -37,6 +37,9 @@ function GlobalTags() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
+          body {
+            background-color: #001428;
+          }
           /* latin-ext */
           @font-face {
             font-family: 'Albert Sans';

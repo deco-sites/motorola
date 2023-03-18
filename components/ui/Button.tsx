@@ -13,6 +13,7 @@ export type Props =
   };
 
 const variants = {
+  empty: "border-0 focus:outline-none",
   primary:
     "h-[36px] px-3 rounded bg-interactive font-button text-button text-default-inverse border-transparent hover:bg-default hover:text-default hover:border-interactive active:bg-interactive active:text-default-inverse active:border-transparent disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none ",
   secondary:

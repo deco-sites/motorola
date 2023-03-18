@@ -5,7 +5,8 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
-import { animation, keyframes, tw } from "twind/css";
+import { tw } from "twind/css";
+import Container from "$store/components/ui/Container.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
@@ -18,12 +19,6 @@ export interface Banner {
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
-    /** @description Image text title */
-    title: string;
-    /** @description Image text subtitle */
-    subTitle: string;
-    /** @description Button label */
-    label: string;
   };
 }
 
@@ -49,22 +44,22 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
-      <a href={action?.href ?? "#"} aria-label={action?.label}>
+    <div class="relative min-w-[100vw] md:min-w-[1366px] overflow-y-hidden">
+      <a href={action?.href ?? "#"} aria-label={alt}>
         <Picture class="w-full" preload={lcp}>
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={mobile}
-            width={360}
-            height={600}
+            width={600}
+            height={617}
           />
           <Source
             media="(min-width: 768px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={desktop}
-            width={1440}
-            height={600}
+            width={1050}
+            height={337}
           />
           <img
             class="object-cover w-full sm:h-full"
@@ -73,20 +68,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             alt={alt}
           />
         </Picture>
-        {action && (
-          <div
-            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
-            style={{ backdropFilter: "blur(8px)" }}
-          >
-            <Text variant="heading-1" tone="default-inverse">
-              {action.title}
-            </Text>
-            <Text variant="heading-3" tone="default-inverse">
-              {action.subTitle}
-            </Text>
-            <Button variant="secondary">{action.label}</Button>
-          </div>
-        )}
       </a>
     </div>
   );
@@ -106,7 +87,7 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <ol class="flex items-center justify-center col-span-full gap-4 z-10 row-start-4">
+      <ol class="flex items-center absolute bottom-5 justify-center col-span-full gap-2 z-10 row-start-4">
         {images?.map((_, index) => (
           <li class="h-full">
             <button
@@ -115,23 +96,7 @@ function Dots({ images, interval = 0 }: Props) {
               class="h-full rounded focus:outline-none group"
             >
               <div
-                class={tw`group-disabled:${
-                  animation(
-                    `${interval}s ease-out 1 forwards`,
-                    keyframes`
-                      from: {
-                        --dot-progress: 0%;
-                      }
-                      to {
-                        --dot-progress: 100%;
-                      }
-                    `,
-                  )
-                } w-16 sm:w-20 h-0.5`}
-                style={{
-                  background:
-                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
-                }}
+                class={tw`group-disabled:bg-white w-[30px] h-1 border-1 border-white rounded-[30px]`}
               />
             </button>
           </li>
@@ -144,33 +109,32 @@ function Dots({ images, interval = 0 }: Props) {
 function Controls() {
   return (
     <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="flex hidden md:(block absolute left-3) items-center justify-center z-10 col-start-1 row-start-2">
         <Button
           class="h-12 w-12"
-          variant="icon"
+          variant="empty"
           data-slide="prev"
           aria-label="Previous item"
         >
           <Icon
-            class="text-default-inverse"
-            size={20}
-            id="ChevronLeft"
-            strokeWidth={3}
+            size={35}
+            id="ArrowWhite"
+            strokeWidth={1}
           />
         </Button>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex hidden md:(block absolute right-3) items-center justify-center z-10 col-start-3 row-start-2">
         <Button
           class="h-12 w-12"
-          variant="icon"
+          variant="empty"
           data-slide="next"
           aria-label="Next item"
         >
           <Icon
-            class="text-default-inverse"
-            size={20}
-            id="ChevronRight"
-            strokeWidth={3}
+            class="transform rotate-180"
+            size={35}
+            id="ArrowWhite"
+            strokeWidth={1}
           />
         </Button>
       </div>
@@ -182,22 +146,24 @@ function BannerCarousel({ images, preload, interval }: Props) {
   const id = useId();
 
   return (
-    <div
-      id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px]"
-    >
-      <Slider class="col-span-full row-span-full scrollbar-none gap-6">
-        {images?.map((image, index) => (
-          <BannerItem image={image} lcp={index === 0 && preload} />
-        ))}
-      </Slider>
+    <Container>
+      <div
+        id={id}
+        class="grid flex items-center justify-center relative pb-14 bg-mz-blue-bg grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px]"
+      >
+        <Slider class="col-span-full row-span-full scrollbar-none gap-6">
+          {images?.map((image, index) => (
+            <BannerItem image={image} lcp={index === 0 && preload} />
+          ))}
+        </Slider>
 
-      <Controls />
+        <Controls />
 
-      <Dots images={images} interval={interval} />
+        <Dots images={images} interval={interval} />
 
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
-    </div>
+        <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
+      </div>
+    </Container>
   );
 }
 
