@@ -1,7 +1,7 @@
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
 }
-
+import Container from "../components/ui/Container.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
@@ -37,7 +37,7 @@ function ScreenFadeText({ page }: Props) {
   if (!newPdp || newPdp?.value != "Sim" || !data) return null;
 
   return (
-    <div class="bg-black">
+    <Container class="bg-black">
       <section class="">
         <div class="relative">
           <video className={"w-full"} loop preload="auto">
@@ -101,7 +101,7 @@ function ScreenFadeText({ page }: Props) {
           )}
         </div>
       </section>
-    </div>
+    </Container>
   );
 }
 

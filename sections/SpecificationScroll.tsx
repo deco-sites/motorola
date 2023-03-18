@@ -1,6 +1,6 @@
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-
+import Container from "../components/ui/Container.tsx";
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
 }
@@ -48,7 +48,7 @@ function SpecificationScroll({ page }: Props) {
   const newPdp = productField?.find((item) => item.name === "newPDP");
   if (!newPdp || newPdp?.value != "Sim") return null;
   return (
-    <div class="p-2 bg-[#001428]">
+    <Container class="p-2 bg-[#001428]">
       <div class="border-1 border-[#082e53] bg-[#011b34]">
         <div>
           <p>FICHA TÉCNICA COMPLETA</p>
@@ -102,7 +102,7 @@ function SpecificationScroll({ page }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

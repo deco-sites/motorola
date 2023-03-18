@@ -1,5 +1,5 @@
 import { Source } from "deco-sites/std/components/Picture.tsx";
-
+import Container from "../components/ui/Container.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
@@ -14,7 +14,7 @@ function DiscoverProduct({ page }: Props) {
   if (!newPdp || newPdp?.value != "Sim" || !data) return null;
 
   return (
-    <div class="md:max-w-[80%] m-auto px-4 py-8 md:py-10">
+    <Container class="m-auto px-4 py-8 md:py-10 bg-white">
       <div>
         <p class="text-center text-xl md:text-2xl pb-12 md:pb-0">
           O QUE <span class="text-[#ff554d]">ACOMPANHA</span> SEU MOTO
@@ -42,7 +42,7 @@ function DiscoverProduct({ page }: Props) {
           decoding="async"
         />
       </picture>
-    </div>
+    </Container>
   );
 }
 

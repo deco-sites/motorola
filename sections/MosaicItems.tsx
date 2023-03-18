@@ -1,5 +1,6 @@
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import Container from "../components/ui/Container.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -93,7 +94,7 @@ function MosaicItems({ page }: Props) {
     ],
   };
   return (
-    <div className={"bg-black pb-12"}>
+    <Container class={"bg-black pb-12"}>
       <div
         className={"max-w-[960px] flex flex-col md:flex-row gap-8 mx-auto flex-wrap"}
       >
@@ -125,7 +126,7 @@ function MosaicItems({ page }: Props) {
           );
         })}
       </div>
-    </div>
+    </Container>
   );
 }
 

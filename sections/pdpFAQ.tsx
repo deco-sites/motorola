@@ -1,9 +1,6 @@
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-
+import Container from "../components/ui/Container.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import GlobalCameraLensScrollBtn from "../islands/GlobalCameraLensScrollBtn.tsx";
-import { Btns } from "../islands/GlobalCameraLensScrollBtn.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -16,7 +13,7 @@ function pdpFAQ({ page }: Props) {
   const newPdp = productField?.find((item) => item.name === "newPDP");
   if (!newPdp || newPdp?.value != "Sim" || !data) return null;
   return (
-    <div className="bg-[#001428] p-4">
+    <Container class="bg-[#001428] p-4">
       <div>
         <div class="flex flex-col gap-4">
           {data?.faq?.map(
@@ -37,7 +34,7 @@ function pdpFAQ({ page }: Props) {
           )}
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

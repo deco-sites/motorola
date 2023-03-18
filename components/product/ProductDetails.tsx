@@ -46,7 +46,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
   const [front, back] = images ?? [];
 
   return (
-    <Container class="py-0 sm:py-10">
+    <Container class="py-0 sm:py-10 bg-white">
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
         <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">

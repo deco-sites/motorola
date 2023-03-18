@@ -1,9 +1,9 @@
 import { Source } from "deco-sites/std/components/Picture.tsx";
-
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import GlobalCameraLensScrollBtn from "../islands/GlobalCameraLensScrollBtn.tsx";
 import { Btns } from "../islands/GlobalCameraLensScrollBtn.tsx";
+import Container from "../components/ui/Container.tsx";
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
 }
@@ -18,7 +18,7 @@ function GlobalCameraLensScroll({ page }: Props) {
   if (!newPdp || newPdp?.value != "Sim" || !data) return null;
 
   return (
-    <div id="global-camera-lens" className="bg-black pb-12 md:pb-0">
+    <Container class="bg-black pb-12 md:pb-0">
       <div class="flex flex-col w-full pt-10 md:pt-0 md:max-w-[960px] md:mx-auto md:flex-row">
         <div class="flex flex-col md:flex-1 md:py-12">
           <div class="w-full pb-6 md:max-w-sm">
@@ -82,7 +82,7 @@ function GlobalCameraLensScroll({ page }: Props) {
           ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

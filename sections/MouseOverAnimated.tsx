@@ -1,9 +1,6 @@
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-
+import Container from "../components/ui/Container.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import GlobalCameraLensScrollBtn from "../islands/GlobalCameraLensScrollBtn.tsx";
-import { Btns } from "../islands/GlobalCameraLensScrollBtn.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -18,7 +15,7 @@ function MouseOverAnimated({ page }: Props) {
   const newPdp = productField?.find((item) => item.name === "newPDP");
   if (!newPdp || newPdp?.value != "Sim" || !data) return null;
   return (
-    <div className="md:pb-12">
+    <Container class="md:pb-12 bg-white">
       <div
         className={"px-4 md:py-4 md:pt-12 py-10 md:flex md:flex-wrap md:gap-4"}
       >
@@ -84,7 +81,7 @@ function MouseOverAnimated({ page }: Props) {
           ))}
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

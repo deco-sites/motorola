@@ -1,5 +1,5 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-
+import Container from "../components/ui/Container.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
@@ -15,8 +15,8 @@ function BaseCard({ page }: Props) {
   if (!newPdp || newPdp?.value != "Sim" || !data) return null;
 
   return (
-    <div id="base-card" className="pt-4 bg-[#001428]">
-      <div className="pb-24 md:max-w-[960px] mx-auto">
+    <Container class="pt-4 bg-[#001428]">
+      <div className="pb-24 mx-auto">
         <div className="">
           <picture>
             <Source
@@ -50,7 +50,7 @@ function BaseCard({ page }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
