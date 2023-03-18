@@ -11,10 +11,6 @@ export interface Feature {
    * @description Title
    */
   title: string;
-  /**
-   * @description Description and Image alt text
-   */
-  description: string;
 }
 
 export interface Props {
@@ -25,22 +21,27 @@ function FeatureHighlights(
   { features }: Props,
 ) {
   return (
-    <Container class="min-h-[280px] p-6 sm:px-0 sm:py-10">
-      <div class="border-default border-1">
-        <div class="flex flex-col justify-evenly sm:flex-row divide-y-1 sm:divide-y-0 sm:divide-x-1 divide-default mx-6 sm:mx-0 sm:my-10">
-          {features.map(({ icon: id = "Truck", title, description }) => (
-            <div class="flex flex-row sm:flex-col gap-4 py-6 sm:py-0 sm:px-10">
+    <Container class="px-6 mb-12 sm:px-0 sm:py-10">
+      <div class="border-[#082e53] rounded-[4px] border-1">
+        <div class="flex gap-2 justify-start overflow-scroll md:(overflow-auto justify-evenly py-4 px-0) py-3 px-4 sm:flex-row">
+          {features.map(({ icon: id = "Truck", title }) => (
+            <div class="flex flex-row min-w-[50%] md:(min-w-0) items-center gap-2">
+              <Icon
+                id={id}
+                width={30}
+                height={30}
+                strokeWidth={2}
+                class="text-white md:hidden"
+              />
               <Icon
                 id={id}
                 width={40}
                 height={40}
                 strokeWidth={2}
+                class="text-white hidden md:block"
               />
               <div class="flex flex-col gap-2">
-                <Text variant="heading-3">{title}</Text>
-                <Text tone="subdued" variant="caption">
-                  {description}
-                </Text>
+                <span class="text-[12px] text-white leading-4 md:(pl-1.5 text-[16px])">{title}</span>
               </div>
             </div>
           ))}
