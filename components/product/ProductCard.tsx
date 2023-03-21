@@ -4,7 +4,6 @@ import Avatar from "$store/components/ui/Avatar.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
-import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 /**
@@ -12,27 +11,27 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
  * It takes the user to the pdp once the user clicks on a given sku. This is interesting to
  * remove JS from the frontend
  */
-function Sizes(product: Product) {
-  const possibilities = useVariantPossibilities(product);
-  const options = Object.entries(
-    possibilities["TAMANHO"] ?? possibilities["Tamanho"] ?? {},
-  );
+// function Sizes(product: Product) {
+//   const possibilities = useVariantPossibilities(product);
+//   const options = Object.entries(
+//     possibilities["TAMANHO"] ?? possibilities["Tamanho"] ?? {},
+//   );
 
-  return (
-    <ul class="flex justify-center items-center gap-2">
-      {options.map(([url, value]) => (
-        <a href={url}>
-          <Avatar
-            class="bg-default"
-            variant="abbreviation"
-            content={value}
-            disabled={url === product.url}
-          />
-        </a>
-      ))}
-    </ul>
-  );
-}
+//   return (
+//     <ul class="flex justify-center items-center gap-2">
+//       {options.map(([url, value]) => (
+//         <a href={url}>
+//           <Avatar
+//             class="bg-default"
+//             variant="abbreviation"
+//             content={value as string}
+//             disabled={url === product.url}
+//           />
+//         </a>
+//       ))}
+//     </ul>
+//   );
+// }
 
 interface Props {
   product: Product;
@@ -84,7 +83,7 @@ function ProductCard({ product, preload }: Props) {
                 backdropFilter: "blur(2px)",
               }}
             >
-              <Sizes {...product} />
+              {/* <Sizes {...product} /> */}
               <Button as="a" href={product.url}>Visualizar Produto</Button>
             </div>
           )}

@@ -41,7 +41,9 @@ function FeatureHighlights(
                 class="text-white hidden md:block"
               />
               <div class="flex flex-col gap-2">
-                <span class="text-[12px] text-white leading-4 md:(pl-1.5 text-[16px])">{title}</span>
+                <span class="text-[12px] text-white leading-4 md:(pl-1.5 text-[16px])">
+                  {title}
+                </span>
               </div>
             </div>
           ))}

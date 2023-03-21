@@ -1,6 +1,8 @@
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import Container from "../components/ui/Container.tsx";
+import ToogleDiv from "../islands/ToogleDiv.tsx";
+
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
 }
@@ -49,11 +51,16 @@ function SpecificationScroll({ page }: Props) {
   if (!newPdp || newPdp?.value != "Sim") return null;
   return (
     <Container class="p-2 bg-[#001428]">
-      <div class="border-1 border-[#082e53] bg-[#011b34]">
-        <div>
-          <p>FICHA TÉCNICA COMPLETA</p>
-        </div>
-        <div class="md:w-[80%] m-auto bg-[#011b34]">
+      <div class="border-1 border-[#082e53] bg-[#011b34] my-3">
+        <ToogleDiv
+          idToToogle="technical-file"
+          text={"FICHA TÉCNICA COMPLETA"}
+          divClass={"text-white py-3 max-w-[80%] m-auto flex justify-center items-center cursor-pointer"}
+        />
+        <div
+          id={"technical-file"}
+          class="md:w-[80%] m-auto bg-[#011b34] hidden"
+        >
           <div>
             <div class="px-4">
               {Object.keys(listOfSpecifications).map((key) => {

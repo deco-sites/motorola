@@ -63,6 +63,8 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
     price,
     listPrice: listPrice?.price,
     seller,
+    inventoryLevel: offer?.inventoryLevel?.value || 0,
+    // teasers,
     installments: installment && price
       ? installmentToString(installment, price)
       : null,
