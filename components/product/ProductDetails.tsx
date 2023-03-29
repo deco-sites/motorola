@@ -71,6 +71,7 @@ function Details({ page }: { page: PDP }) {
   const { price, listPrice, seller, installments, inventoryLevel } = useOffer(
     offers,
   );
+
   const [front, back] = images ?? [];
   // const boletoDiscount = teasers?.find((teaser:{"<Name>k__BackingField":string}) => teaser["<Name>k__BackingField"] === "[C] Desconto a vista 10% Cartão Boleto");
   // const boletoDiscountPerc = boletoDiscount["<Effects>k__BackingField"]["<Parameters>k__BackingField"][0]["<Value>k__BackingField"]
@@ -121,19 +122,10 @@ function Details({ page }: { page: PDP }) {
           <div class="flex justify-between text-sm pb-4 border-b-1 mb-4">
             <div>{isVariantOf?.name} - {name}</div>
             {inventoryLevel && (
-              <div class={"text-mz-title-red "}>
+              <div class={"text-mz-title-red font-xs text-right"}>
                 Apenas {inventoryLevel} unidade{inventoryLevel > 1 ? "s" : ""}
               </div>
             )}
-          </div>
-          <div class="mt-4 sm:mt-6">
-            <ProductSelector product={product} />
-          </div>
-          <div>
-            {formatPrice(listPrice, offers!.priceCurrency!)}
-          </div>
-          <div>
-            {formatPrice(price, offers!.priceCurrency!)} em até {installments}
           </div>
           {
             /* {valueWithDiscount &&
@@ -141,34 +133,63 @@ function Details({ page }: { page: PDP }) {
               {formatPrice(valueWithDiscount, offers!.priceCurrency!)} à vista com 10% de desconto
             </div>} */
           }
-          <div>
-            <p>Formas de pagamento</p>
+          
+          <div class="mt-4 sm:mt-6">
+            <ProductSelector product={product} />
           </div>
 
-          <div>
-            <div>
-              <h3>Troca Smart - Dinheiro em conta</h3>
-              <button>Saiba mais</button>
+          <div class="border-y-1 my-2 py-4">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="font-medium">Troca Smart - Dinheiro em conta</h3>
+              <button class="underline text-[10px]">Saiba mais</button>
             </div>
-            <p>
+            <p class="text-[10px] mb-6">
               Seu aparelho usado pode valer até R$ 3.000,00 no programa Troca
               Smart.
             </p>
-            <div>
-              <button>Sim</button>
-              <button>Não</button>
+            <div class="flex gap-4 justify-between">
+              <button class="py-2 border flex-1 rounded-md font-sm">Sim</button>
+              <button class="py-2 border flex-1 rounded-md border-black bg-gray-500 font-semibold font-sm">Não</button>
             </div>
           </div>
 
+          <div class="text-xs mb-2 font-bold text-gray-400 line-through">
+            {formatPrice(listPrice, offers!.priceCurrency!)}
+          </div>
+          <div class="text-sm mb-2">
+            {formatPrice(price, offers!.priceCurrency!)} em até {installments}
+          </div>
+          {/* <div>
+            <DiscountTeaser/>
+          </div> */}
           <div>
-            <div>
-              <div>
+            <p class="underline text-sm">Formas de pagamento</p>
+          </div>
+            {/* Add to Cart and Favorites button */}
+            <div class="mt-4 flex flex-col gap-2">
+                {seller && (
+                <AddToCartButton
+                    skuId={productID}
+                    sellerId={seller}
+                    text="Comprar"
+                    class="bg-[#ff554d] font-semibold w-full rounded-md hover:bg-[#ff7870] hover:border-[#ff7870] hover:text-white active:bg-[#ff7870] h-12"
+                />
+                )}
+                {/* <Button variant="secondary">
+                <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
+                Favoritar
+                </Button> */}
+            </div>
+
+          <div class="mt-8">
+            <div class="flex p-4 gap text-xs items-center bg-[#f5f5f5] rounded-md">
+              <div class="pr-3 border-r-1 mr-3">
                 <a>Compare</a>
               </div>
-              <div>
+              <div class="pr-3 border-r-1 mr-3">
                 <p>Frete Grátis</p>
               </div>
-              <div>
+              <div class="pr-3">
                 <p>Até 10% OFF pagando com PIX</p>
               </div>
             </div>
@@ -207,23 +228,6 @@ function Details({ page }: { page: PDP }) {
             <Text tone="subdued" variant="caption">
               {installments}
             </Text>
-          </div>
-          {/* Sku Selector */}
-          <div class="mt-4 sm:mt-6">
-            <ProductSelector product={product} />
-          </div>
-          {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-            {seller && (
-              <AddToCartButton
-                skuId={productID}
-                sellerId={seller}
-              />
-            )}
-            <Button variant="secondary">
-              <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
-              Favoritar
-            </Button>
           </div>
           {/* Description card */}
           <div class="mt-4 sm:mt-6">

@@ -24,7 +24,7 @@ function ToogleOnScreen(
     };
   }, []);
 
-  return <div />;
+  return <div class="hidden"/>;
 }
 
 export default ToogleOnScreen;

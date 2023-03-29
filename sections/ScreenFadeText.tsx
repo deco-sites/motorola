@@ -44,12 +44,12 @@ function ScreenFadeText({ page }: Props) {
     <Container class="bg-black">
       <section class="">
         <div class="relative">
-          <video className={"w-full"} loop preload="auto">
-            <source
+          <video className={"w-full"} loop controls preload="auto">
+            {/* <source
               media="(max-width: 767px)"
               src={data?.contents?.mainVideoURL?.mobile}
               type={`video/mp4;codecs="avc1.42E01E, mp4a.40.2"`}
-            />
+            /> */}
             <source
               media="(min-width: 768px)"
               src={data?.contents?.mainVideoURL?.desktop}
