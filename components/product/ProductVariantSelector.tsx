@@ -17,6 +17,8 @@ interface Props {
 function VariantSelector(
   { skuVariations, url: currentUrl, skuId }: Props & skuVariations,
 ) {
+    console.log(currentUrl)
+    console.log(skuVariations)
   return (
     <ul class="flex gap-4 flex-row gap-2 flex-wrap justify-between">
       {Object.keys(skuVariations[skuId]).reverse().map((name) => (

@@ -15,6 +15,7 @@ import type {
 } from "deco-sites/std/commerce/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
+import ProductSelector2 from "./ProductVariantSelector2.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -186,7 +187,7 @@ function Details({ page }: { page: PDP }) {
           /> */
           }
           {/* Code and name */}
-          <div class="mt-4 sm:mt-8">
+          {/* <div class="mt-4 sm:mt-8">
             <div>
               <Text tone="subdued" variant="caption">
                 Cod. {gtin}
@@ -195,9 +196,9 @@ function Details({ page }: { page: PDP }) {
             <h1>
               <Text variant="heading-3">{name}</Text>
             </h1>
-          </div>
+          </div> */}
           {/* Prices */}
-          <div class="mt-4">
+          {/* <div class="mt-4">
             <div class="flex flex-row gap-2 items-center">
               <Text
                 class="line-through"
@@ -211,18 +212,18 @@ function Details({ page }: { page: PDP }) {
             <Text tone="subdued" variant="caption">
               {installments}
             </Text>
-          </div>
+          </div> */}
           {/* Sku Selector */}
-          <div class="mt-4 sm:mt-6">
+          {/* <div class="mt-4 sm:mt-6">
             <ProductSelector
             // deno-lint-ignore no-explicit-any
               skuVariations={skuVariations as any}
               url={product.url}
               skuId={productID}
             />
-          </div>
+          </div> */}
           {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+          {/* <div class="mt-4 sm:mt-10 flex flex-col gap-2">
             {seller && (
               <AddToCartButton
                 skuId={productID}
@@ -233,9 +234,9 @@ function Details({ page }: { page: PDP }) {
               <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
               Favoritar
             </Button>
-          </div>
+          </div> */}
           {/* Description card */}
-          <div class="mt-4 sm:mt-6">
+          {/* <div class="mt-4 sm:mt-6">
             <Text variant="caption">
               {description && (
                 <details>
@@ -244,7 +245,7 @@ function Details({ page }: { page: PDP }) {
                 </details>
               )}
             </Text>
-          </div>
+          </div> */}
         </div>
       </div>
     </Container>
