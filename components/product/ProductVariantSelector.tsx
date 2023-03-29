@@ -1,42 +1,38 @@
 import Text from "$store/components/ui/Text.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
-import { skuVariations } from "./ProductDetails.tsx";
-
-const dict = {
-  "Storage Size": "Capacidade",
-  "Color": "Cor",
-} as {
-  [key: string]: string;
-};
+import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
-  url?: string;
-  skuId: string;
+  product: Product;
 }
 
-function VariantSelector(
-  { skuVariations, url: currentUrl, skuId }: Props & skuVariations,
-) {
+function VariantSelector({ product }: Props) {
+  const possibilities = useVariantPossibilities(product);
+  const { url: currentUrl } = product;
+
   return (
-    <ul class="flex gap-4 flex-row gap-2 flex-wrap justify-between">
-      {Object.keys(skuVariations[skuId]).reverse().map((name) => (
+    <ul class="flex flex-col gap-4">
+      {Object.keys(possibilities).map((name) => (
         <li class="flex flex-col gap-2">
-          <Text variant="caption">{dict[name]}</Text>
+          <Text variant="caption">{name}</Text>
           <ul class="flex flex-row gap-2">
-            {skuVariations[skuId][name].map((
-              { url, value }: { url: string; value: string },
-            ) => (
-              <li>
-                <a href={url}>
-                  <Avatar
-                    // deno-lint-ignore no-explicit-any
-                    content={value as any}
-                    disabled={url === currentUrl}
-                    variant={"color"}
-                  />
-                </a>
-              </li>
-            ))}
+            {Object.entries(possibilities[name]).map(([value, urls]) => {
+              const url = urls.find((url) => url === currentUrl) || urls[0];
+
+              return (
+                <li>
+                  <a href={url}>
+                    <Avatar
+                      // deno-lint-ignore no-explicit-any
+                      content={value as any}
+                      disabled={url === currentUrl}
+                      variant={name === "COR" ? "color" : "abbreviation"}
+                    />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </li>
       ))}

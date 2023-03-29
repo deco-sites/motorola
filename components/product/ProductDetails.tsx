@@ -55,6 +55,7 @@ function Details({ page }: { page: PDP }) {
     breadcrumbList,
     product,
   } = page;
+
   const {
     description,
     productID,
@@ -126,12 +127,7 @@ function Details({ page }: { page: PDP }) {
             )}
           </div>
           <div class="mt-4 sm:mt-6">
-            <ProductSelector
-            //deno-lint-ignore no-explicit-any
-              skuVariations={skuVariations as any}
-              url={product.url}
-              skuId={productID}
-            />
+            <ProductSelector product={product} />
           </div>
           <div>
             {formatPrice(listPrice, offers!.priceCurrency!)}
@@ -214,12 +210,7 @@ function Details({ page }: { page: PDP }) {
           </div>
           {/* Sku Selector */}
           <div class="mt-4 sm:mt-6">
-            <ProductSelector
-            // deno-lint-ignore no-explicit-any
-              skuVariations={skuVariations as any}
-              url={product.url}
-              skuId={productID}
-            />
+            <ProductSelector product={product} />
           </div>
           {/* Add to Cart and Favorites button */}
           <div class="mt-4 sm:mt-10 flex flex-col gap-2">
