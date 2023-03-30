@@ -47,66 +47,45 @@ function ProductCard({ product, preload }: Props) {
     image: images,
     offers,
   } = product;
+
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
 
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full group"
+      class="w-full group max-w-[300px] px-6"
     >
       <a href={url} aria-label="product link">
-        <div class="relative w-full">
-          <Image
-            src={front.url!}
-            alt={front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full group-hover:hidden"
-            preload={preload}
-            loading={preload ? "eager" : "lazy"}
-            sizes="(max-width: 640px) 50vw, 20vw"
-          />
-          <Image
-            src={back?.url ?? front.url!}
-            alt={back?.alternateName ?? front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full hidden group-hover:block"
-            sizes="(max-width: 640px) 50vw, 20vw"
-          />
+        <div class="relative w-full pb-8 overflow-hidden">
+          <Image src={front.url!} alt={front.alternateName} width={200} height={279} class="rounded w-full" preload={preload} loading={preload ? "eager" : "lazy"} sizes="(max-width: 640px) 50vw, 20vw" />
           {seller && (
             <div
-              class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                backdropFilter: "blur(2px)",
-              }}
+              class="absolute sm:left-[-300px] sm:group-hover:left-0 w-full duration-300"
             >
               {/* <Sizes {...product} /> */}
-              <Button as="a" href={product.url}>Visualizar Produto</Button>
+              <a class="bg-mz-title-red hover:bg-mz-title-red py-3 px-10 text-center rounded-md text-white text-sm" href={product.url}>Comprar</a>
             </div>
           )}
         </div>
 
         <div class="flex flex-col gap-1 py-2">
-          <Text
-            class="overflow-hidden overflow-ellipsis whitespace-nowrap"
-            variant="caption"
-          >
+          <p class="overflow-hidden overflow-ellipsis whitespace-nowrap text-white font-bold text-sm" >
             {name}
-          </Text>
-          <div class="flex items-center gap-2">
-            <Text
-              class="line-through"
-              variant="list-price"
-              tone="subdued"
-            >
-              {formatPrice(listPrice, offers!.priceCurrency!)}
-            </Text>
-            <Text variant="caption" tone="price">
-              {formatPrice(price, offers!.priceCurrency!)}
-            </Text>
+          </p>
+          <p class="text-xs font-bold text-[#92c1e9]">
+            mais cores
+          </p>
+          <div class="flex items-center gap-2"> 
+              <Text class="line-through" variant="list-price" tone="subdued" >
+                {formatPrice(listPrice, offers!.priceCurrency!)}
+              </Text>
+          </div>
+          <div class="border-b border-[#1b5185] pb-2">
+            <span class="text-white">à vista</span>
+          </div>
+          <div class="w-full text-center py-6 text-[#92c1e9] text-sm">
+            <a href={`/compare/${productID}`}>Compare esse produto</a>
           </div>
         </div>
       </a>
