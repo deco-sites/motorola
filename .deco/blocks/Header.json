@@ -23,8 +23,8 @@
   "navItems": [
     {
       "@type": "SiteNavigationElement",
-      "url": "/shop",
-      "name": "Shop",
+      "url": "/",
+      "name": "Lançamentos",
       "children": [
         {
           "image": [],
@@ -141,8 +141,8 @@
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/collections",
-      "name": "Collections",
+      "url": "/smartphones",
+      "name": "Smartphones",
       "children": [
         {
           "image": [],
@@ -241,8 +241,8 @@
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/sale",
-      "name": "Sale",
+      "url": "/acessorios",
+      "name": "Acessórios",
       "children": [
         {
           "image": [],

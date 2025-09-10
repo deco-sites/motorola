@@ -44,7 +44,7 @@
           "__resolveType": "vtex/loaders/legacy/productList.ts",
           "props": {
             "sort": "",
-            "count": 4
+            "count": 8
           }
         }
       }
@@ -76,7 +76,7 @@
           "height": 1000,
           "alt": "IMG 1",
           "desktop": "https://assets.decocache.com/motorola/b9ca9ffb-8e41-4a30-bc3e-c3756a9552ae/image_grid_1.webp",
-          "mobile": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png"
+          "mobile": "https://assets.decocache.com/motorola/0b4f7336-9408-4b84-9eb8-258371395b45/image_grid_1.webp"
         },
         {
           "width": 1000,

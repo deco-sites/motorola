@@ -240,7 +240,7 @@ export default function SecondaryImageCarousel({ images }: Props) {
     <div>
       <div
         id={id}
-        class="px-4 overflow-x-auto overflow-y-hidden scroll-smooth"
+        class="hidden sm:block px-4 overflow-x-auto overflow-y-hidden scroll-smooth"
         style={{ scrollbarWidth: "thin" }}
       >
         <div class="inline-flex flex-nowrap gap-2 pt-2 pb-2">

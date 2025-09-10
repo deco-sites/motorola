@@ -161,16 +161,14 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
     />
 
     <div
-      class="grid place-items-center w-screen px-5 gap-4"
+      class="grid grid-cols-3 grid-items-center w-screen px-5 gap-4"
       style={{
         height: NAVBAR_HEIGHT_MOBILE,
-        gridTemplateColumns:
-          "min-content auto min-content min-content min-content",
       }}
     >
       <label
         for={SIDEMENU_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
+        class="btn btn-square btn-sm btn-ghost my-auto mr-auto"
         aria-label="open menu"
       >
         <Icon id="menu" />
@@ -191,14 +189,17 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => (
         </a>
       )}
 
-      <label
-        for={SEARCHBAR_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
-        aria-label="search icon button"
-      >
-        <Icon id="search" />
-      </label>
-      <Bag />
+      <div class="flex justify-end items-center gap-1">
+        <label
+          for={SEARCHBAR_DRAWER_ID}
+          class="btn btn-square btn-sm btn-ghost"
+          aria-label="search icon button"
+        >
+          <Icon id="search" />
+        </label>
+        <Bag />
+      </div>
+      
     </div>
   </>
 );

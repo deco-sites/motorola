@@ -59,14 +59,12 @@ export const LoadingFallback = (
         }}
       >
         <div class="col-start-1 col-span-3 row-start-1 row-span-1 gap-1">
-          <div class="carousel carousel-center sm:carousel-end w-full gap-2">
+          <div class="carousel carousel-center carousel-end w-full gap-2">
             {Array(6).fill(0).map((_, index) => (
               <div
                 key={index}
                 class={clx(
-                  "carousel-item w-[calc(25%-6px)]",
-                  "first:pl-5 first:sm:pl-0",
-                  "last:pr-5 last:sm:pr-0",
+                  "carousel-item w-[70vw] sm:w-[calc(25%-6px)]",
                 )}
               >
                 <div class="w-full">

@@ -3632,9 +3632,6 @@ details.collapse summary::-webkit-details-marker {
 .m-8 {
   margin: 2rem;
 }
-.m-auto {
-  margin: auto;
-}
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -3663,6 +3660,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -3675,14 +3676,14 @@ details.collapse summary::-webkit-details-marker {
 .ml-2 {
   margin-left: 0.5rem;
 }
-.mr-0 {
-  margin-right: 0px;
-}
 .mr-2 {
   margin-right: 0.5rem;
 }
 .mr-3 {
   margin-right: 0.75rem;
+}
+.mr-auto {
+  margin-right: auto;
 }
 .mt-10 {
   margin-top: 2.5rem;
@@ -3828,9 +3829,6 @@ details.collapse summary::-webkit-details-marker {
 .min-h-\[42px\] {
   min-height: 42px;
 }
-.w-1\/3 {
-  width: 33.333333%;
-}
 .w-10 {
   width: 2.5rem;
 }
@@ -3909,8 +3907,8 @@ details.collapse summary::-webkit-details-marker {
 .w-\[543px\] {
   width: 543px;
 }
-.w-\[calc\(25\%-6px\)\] {
-  width: calc(25% - 6px);
+.w-\[70vw\] {
+  width: 70vw;
 }
 .w-auto {
   width: auto;
@@ -4034,6 +4032,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .flex-shrink {
   flex-shrink: 1;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 .shrink-0 {
   flex-shrink: 0;
@@ -5234,12 +5235,20 @@ details.collapse summary::-webkit-details-marker {
     width: 50%;
   }
 
+  .sm\:w-1\/3 {
+    width: 33.333333%;
+  }
+
   .sm\:w-\[522px\] {
     width: 522px;
   }
 
   .sm\:w-\[552px\] {
     width: 552px;
+  }
+
+  .sm\:w-\[calc\(25\%-6px\)\] {
+    width: calc(25% - 6px);
   }
 
   .sm\:max-w-\[33\%\] {
@@ -5288,6 +5297,10 @@ details.collapse summary::-webkit-details-marker {
 
   .sm\:flex-wrap {
     flex-wrap: wrap;
+  }
+
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 
   .sm\:items-start {
@@ -5390,8 +5403,24 @@ details.collapse summary::-webkit-details-marker {
     max-width: 50%;
   }
 
+  .md\:flex-shrink {
+    flex-shrink: 1;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
   .md\:gap-20 {
     gap: 5rem;
+  }
+
+  .md\:overflow-visible {
+    overflow: visible;
+  }
+
+  .md\:whitespace-normal {
+    white-space: normal;
   }
 
   .md\:px-\[60px\] {

@@ -27,9 +27,7 @@ function ProductSlider({ products, itemListName }: Props) {
               <Slider.Item
                 index={index}
                 class={clx(
-                  "carousel-item w-[calc(25%-6px)]",
-                  "first:pl-5 first:sm:pl-0",
-                  "last:pr-5 last:sm:pr-0",
+                  "carousel-item w-[70vw] sm:w-[calc(25%-6px)]"
                 )}
               >
                 <ProductCard
