@@ -1,8 +1,8 @@
 {
   "__resolveType": "site/apps/deco/vtex.ts",
   "platform": "vtex",
-  "publicUrl": "https://osklenbr.myvtex.com/",
-  "account": "osklenbr",
+  "publicUrl": "https://brmotorolanew.myvtex.com/",
+  "account": "brmotorolanew",
   "setRefreshToken": false,
   "defaultSegment": {
     "channelPrivacy": "public"
