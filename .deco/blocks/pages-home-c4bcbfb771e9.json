@@ -1,0 +1,112 @@
+{
+  "name": "Home Page",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Images/Carousel.tsx",
+      "preload": true,
+      "items": [
+        {
+          "alt": "img",
+          "desktop": "https://assets.decocache.com/demo-deco-day/8d00ad71-64c3-4c46-a829-eebe7c7b1562/1742560219550-1226ef79-c7e0-403c-b716-b6b9af3f2936.png",
+          "mobile": "https://assets.decocache.com/demo-deco-day/7c1fb064-eb19-445c-9e14-a5caa723d9e4/image.webp"
+        }
+      ],
+      "interval": 0
+    },
+    {
+      "__resolveType": "site/sections/Content/Benefits.tsx",
+      "benefits": [
+        {
+          "text": "• Frete Grátis em compras a partir de R$ 50"
+        },
+        {
+          "text": "• Até R$ 200 de desconto na primeira compra"
+        },
+        {
+          "text": "• Parcelamento em até 12x sem juros"
+        },
+        {
+          "text": "• Até 15% de desconto à vista"
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "products": {
+          "__resolveType": "vtex/loaders/legacy/productList.ts",
+          "props": {
+            "sort": "",
+            "count": 4
+          }
+        }
+      }
+    },
+    {
+      "__resolveType": "site/sections/Images/SecondaryImageCarousel.tsx",
+      "images": [
+        {
+          "image": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "mobileImage": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "width": 1000,
+          "height": 461,
+          "alt": "Image 1"
+        },
+        {
+          "image": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "mobileImage": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "width": 1000,
+          "height": 461,
+          "alt": "Image 1"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Images/ImageGrid.tsx",
+      "images": [
+        {
+          "width": 1000,
+          "height": 1000,
+          "alt": "IMG 1",
+          "desktop": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "mobile": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png"
+        },
+        {
+          "width": 1000,
+          "height": 1000,
+          "alt": "IMG 1",
+          "desktop": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "mobile": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png"
+        },
+        {
+          "desktop": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "mobile": "https://assets.decocache.com/demo-deco-day/0769fd9e-1876-4867-90ae-bd5c03f90f55/1742560212519-d26304f4-355b-48d0-b649-e24b9cbf0ded.png",
+          "alt": "IMG 1",
+          "width": 1000,
+          "height": 1000
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "path": "/",
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  }
+}

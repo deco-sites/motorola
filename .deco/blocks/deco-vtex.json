@@ -1,0 +1,10 @@
+{
+  "__resolveType": "site/apps/deco/vtex.ts",
+  "platform": "vtex",
+  "publicUrl": "https://osklenbr.myvtex.com/",
+  "account": "osklenbr",
+  "setRefreshToken": false,
+  "defaultSegment": {
+    "channelPrivacy": "public"
+  }
+}

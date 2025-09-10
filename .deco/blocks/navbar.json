@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "@type": "SiteNavigationElement",
+      "url": "/deals",
+      "name": "Deals",
+      "children": [
+        {
+          "image": [],
+          "children": [],
+          "name": "Hello"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "World"
+        }
+      ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "url": "/women",
+      "name": "Women",
+      "children": [
+        {
+          "image": [],
+          "children": [],
+          "name": "Hello"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "World"
+        }
+      ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "url": "/men",
+      "name": "Men",
+      "children": [
+        {
+          "image": [],
+          "children": [],
+          "name": "Hello"
+        },
+        {
+          "image": [],
+          "children": [],
+          "name": "World"
+        }
+      ]
+    }
+  ],
+  "__resolveType": "commerce/loaders/navbar.ts"
+}

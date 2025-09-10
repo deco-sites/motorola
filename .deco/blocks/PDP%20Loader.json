@@ -1,0 +1,10 @@
+{
+  "__resolveType": "vtex/loaders/legacy/productDetailsPage.ts",
+  "advancedConfigs": {
+    "includeOriginalAttributes": []
+  },
+  "slug": {
+    "__resolveType": "website/functions/requestToParam.ts",
+    "param": "slug"
+  }
+}
