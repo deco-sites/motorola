@@ -128,11 +128,11 @@ export default function Cart(
         hx-swap="outerHTML"
       >
         {/* Button to submit the form */}
-        <button hidden autofocus type="button" />
+        <button hidden autofocus />
 
         {/* Add to cart controllers */}
         <input name="add-to-cart" type="hidden" />
-        <button hidden name="action" value="add-to-cart" type="button" />
+        <button hidden name="action" value="add-to-cart" />
 
         {/* This contains the STOREFRONT cart. */}
         <input

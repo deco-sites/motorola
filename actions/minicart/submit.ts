@@ -77,6 +77,8 @@ async function action(
 
   const form = cartFrom(await req.formData());
 
+  console.log("form", form);
+
   const handler = form.action === "set-coupon"
     ? setCoupon
     : form.action === "add-to-cart"

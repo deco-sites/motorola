@@ -98,6 +98,9 @@ const sdk = () => {
         const button = form?.querySelector<HTMLButtonElement>(
           `button[name="action"][value="add-to-cart"]`,
         );
+        console.log("item", item);
+        console.log("platformProps", input);
+        console.log("button", button);
         if (!input || !button) {
           return false;
         }
